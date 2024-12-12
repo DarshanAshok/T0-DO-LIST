@@ -1,10 +1,17 @@
+
+body{
+  background-color: orange;
+}
+
 .to-do-list{
   font-family: Arial, sans-serif;
   text-align: center;
   margin-top: 100px;
+  
 }
 h1{
-  font-size: 4rem;
+
+color: white;
 }
 
 button{
@@ -21,11 +28,11 @@ margin-bottom: 5px;
 }
 
 .add-button{
-  background-color: hs1(125, 47%, 54%);
+  background-color: hs1(150, 55%, 54%);
 }
 
 .add-button:hover{
-  background-color: hs1(125, 47%, 44%);
+  background-color: hs1(155, 70%, 44%);
 }
 
 .delete-button{
@@ -36,9 +43,51 @@ margin-bottom: 5px;
 background-color: hs1(10, 90%, 40%);
 }
 
+.move-button{
+ background-color: aquamarine;
+}
+
+.move-button:hover{
+background-color: aqua;
+}
+
+input[type="text"]{
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 2px solid hsla(0, 0%, 80%, 0.5);
+  border-radius: 5px;
+  color: black;
+}
+
+ol{
+  padding: 0;
+}
+
+li{
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: antiquewhite;
+  margin-bottom: 10px;
+  border: 3px solid hsla(0, 0%, 85%, 0.75);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+
 .text{
-  width: 200px;
-  height: 50px;
+  flex: 1;
+ 
+  /* width: 200px;
+  height: 50px; */
+}
+
+
+.delete-button, .move-button{
+  padding: 12px;
+  font-size: 1.4rem;
+  margin-left: 10px;
 }
 
 .Task{
@@ -46,6 +95,8 @@ background-color: hs1(10, 90%, 40%);
   justify-content: center;
   align-items: center;
 }
+
+
 
 
 

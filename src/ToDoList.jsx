@@ -3,7 +3,7 @@ import React, {useState}  from 'react'
 function ToDoList(){
 
 
-    const[tasks, setTasks]= useState(["Eat Breakfast", "Take a shower", "walk the dog"]);
+    const[tasks, setTasks]= useState([]);
     const[newTask, setNewTask]= useState("");
 
     function handleInputChange(event){
@@ -11,18 +11,38 @@ function ToDoList(){
     }
 
     function addTask(){
+      if(newTask.trim() !== ""){
 
+      
+      setTasks(t => [...t, newTask]);
+      setNewTask("");
+      }
     }
 
     function deleteTask(index){
+      const updatedTasks = tasks.filter((_, i) => i !==index);
+      setTasks(updatedTasks);
+
 
     }
 
     function moveTaskUp(index){
+      if(index > 0){
+        const updatedTasks = [...tasks];
+        [updatedTasks[index], updatedTasks[index-1]] =
+        [updatedTasks[index-1], updatedTasks[index]];
+         setTasks(updatedTasks);
+      }
 
     }
 
     function moveTaskDown(index){
+      if(index < tasks.length - 1){
+        const updatedTasks = [...tasks];
+        [updatedTasks[index], updatedTasks[index + 1]] =
+        [updatedTasks[index + 1], updatedTasks[index]];
+         setTasks(updatedTasks);
+      }
 
     }
 
@@ -44,6 +64,7 @@ function ToDoList(){
 
        <ol>
          {tasks.map((task, index) =>
+         <li>
            <div className = "Task" key={index}>
             <div style={{width: '300px', height: '50px', marginTop: '15px'}}>
                 <span className="text">{task}</span>
@@ -65,6 +86,7 @@ function ToDoList(){
                </button>
                </div>
            </div>
+           </li>
      )}
        </ol>
 
